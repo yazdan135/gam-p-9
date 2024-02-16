@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" type="image/x-icon" href="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/geek-video-game-streamer-logo-design-template-6ff904aa70911d7e57e5780d5355469c_screen.jpg?ts=1696316660">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 5%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+}
+
+.logo{
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.social{
+    margin: 0 auto 0 50px;
+}
+
+.social a{
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.social a:hover{
+    background: #fff;
+}
+
+.social a i{
+    display: flex;
+    font-size: 25px;
+    color: #fff;
+    padding-top: 6px;
+    transition: all 0.5s ease;
+}
+
+.social a:hover i{
+    color: #444;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.slider .slide{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.slide img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.slide.active img{
+    opacity: 1;
+}
+
+.slide .left-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: 0s;
+}
+
+.slide.active .left-info{
+    transform: translateX(0);
+    z-index: 1;
+    transition: 1s ease;
+}
+
+.left-info .penetrte-blur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.penetrte-blur h1{
+    font-size: 200px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 5);
+}
+
+.left-info .content{
+    position: absolute;
+    bottom: 8%;
+    left: 10%;
+    color: #fff;
+}
+
+.content h3{
+    font-size: 20px;
+}
+
+.content p{
+    font-size: 16px;
+    margin: 10px 0 1.5rem;
+}
+
+.content .btn{
+    display: inline-block;
+    padding: 1.3rem 2.8rem;
+    background: #fff;
+    border: 2px solid white;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.6rem;
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+.content .btn:hover{
+    background: transparent;
+    color: #fff;
+}
+
+.slide .right-info{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: 0s;
+}
+
+.slide.active .right-info{
+    transform: translateX(0);
+    z-index: 1;
+    transition: 1s ease;
+}
+
+.right-info h1{
+    font-size: 200px;
+    color: #fff;
+    text-shadow: 
+        0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,  
+        0 6px 1px rgba(0, 0, 0, 0.1),  
+        0 0px 5px rgba(0, 0, 0, 0.1),  
+        0 1px 3px rgba(0, 0, 0, 0.3),  
+        0 3px 5px rgba(0, 0, 0, 0.2),  
+        0 5px 10px rgba(0, 0, 0, 0.25),  
+        0 10px 10px rgba(0, 0, 0, 0.2),  
+        0 20px 20px rgba(0, 0, 0, 0.15),  
+        ;
+}
+
+.right-info h3{
+    position: absolute;
+    font-size: 65px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(190%);
+    margin-left: 1.3rem;
+}
+
+.navigation{
+    position: absolute;
+    bottom: 8%;
+    right: 5%;
+    z-index: 99;
+}
+
+.navigation span{
+    display: inline-flex;
+    width: 5rem;
+    height: 5rem;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-left: 2.5rem;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation span:nth-child(1){
+    background: transparent;
+}
+
+.navigation span:nth-child(1):hover{
+    background: #fff;
+}
+
+.navigation span i{
+    color: #444;
+    transition: all .5s ease;
+}
+
+.navigation span:nth-child(1) i{
+    color: #fff;
+}
+
+.navigation span:nth-child(1):hover i{
+    color: #444;
+}
+    </style>
+</head>
+<body>
+    <body>
+        
+        <header class="header">
+            <a href="" class="logo">ProGame</a>
+    
+            <div class="social">
+                
+                <a href="https://pubg.com/en/"><i class="fa-brands fa-instagram">1</i></a>
+                <a href="https://ff.garena.com/"><i class="fa-brands fa-telegram">2</i></a>
+                <a href="https://www.linkedin.com/jobs/gaming-industry-jobs"><i class="fa-brands fa-linkedin">3</i></a>
+                <a href="https://gameloop.en.download.it/"><i class="fa-brands fa-telegram">4</i></a>
+            </div>
+    
+            <nav class="navbar">
+              
+                <a href="Home.html">Home</a>
+                <a href="About.html">About</a>
+             
+                <a href="Contact.html">Contact us</a>
+                <a href="Feedback.html">Feedback</a>
+            </nav>
+        </header>
+    
+        <section class="banner">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="https://i.pinimg.com/originals/6a/76/e7/6a76e793ee68107db707929e5e324746.jpg" alt="">
+                    <div class="left-info">
+                        <div class="penetrte-blur">
+                            <h1>Game</h1>
+                        </div>
+                        <div class="content">
+                            <h3>00. Gamming ProGame</h3>
+                            <p>However, if you are looking for information about the Oklahoma City Thunder's game statistics, the search results provide some insights. For instance, Russell Westbrook and Fred Brown hold the record for the most points scored in a game for the Thunder, with 58 points each.</p>
+                            <a href="https://www.techtarget.com/whatis/definition/gaming" class="btn">More Details</a>
+                        </div>
+                    </div>
+                    <div class="right-info">
+                        <h1>Pro</h1>
+                        <h3>Thunder</h3>
+                    </div>
+                </div>
+    
+                <div class="slide">
+                    <img src="https://images.hdqwalls.com/wallpapers/2020-black-spiderman-4k-artwork-ul.jpg" alt="">
+                    <div class="left-info">
+                        <div class="penetrte-blur">
+                            <h1>The</h1>
+                        </div>
+                        <div class="content">
+                            <h3>01.The Spider</h3>
+                            <p>Complete Random Crimes: While traveling through the city, various crimes will occur at random. Completing these crimes can give you 200 XP, and completing bonus objectives can increase that to 500 XP.</p>
+                            <a href="https://www.techtarget.com/whatis/definition/gaming" class="btn">More Details</a>
+                        </div>
+                    </div>
+                    <div class="right-info">
+                        <h1>Spider</h1>
+                        <h3>Man</h3>
+                    </div>
+                </div>
+    
+                <div class="slide">
+                    <img src="https://w0.peakpx.com/wallpaper/365/86/HD-wallpaper-fantasy-sniper-shooting-war-pistol-blacksniper-bombs-fantasy-battle-gun-flames-smoke.jpg" alt="">
+                    <div class="left-info">
+                        <div class="penetrte-blur">
+                            <h1>The</h1>
+                        </div>
+                        <div class="content">
+                            <h3>02. The Fight</h3>
+                            <p>
+                                Based on the search results, it seems like you are referring to a gun fight game that has various weapons, each with its own points system. Here are some of the weapons and their points system mentioned in the search results:</p>
+                            <a href="https://www.techtarget.com/whatis/definition/gaming" class="btn">More Details</a>
+                        </div>
+                    </div>
+                    <div class="right-info">
+                        <h1>Gun</h1>
+                        <h3>Fight
+    
+                        </h3>
+                    </div>
+                </div>
+    
+                <div class="slide">
+                    <img src="https://i.ytimg.com/vi/t0Q2otsqC4I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBgbkdHwq9v7C3DObsH54uBSf8hiw" alt="">
+                    <div class="left-info">
+                        <div class="penetrte-blur">
+                            <h1>Funny</h1>
+                        </div>
+                        <div class="content">
+                            <h3>03. The Funny Game</h3>
+                            <p>Two Truths and a Lie: This classic party game involves players sharing two truths and one lie about themselves. The other players then have to guess which one is the lie. Players can earn points for every successful lie they guess.</p>
+                            <a href="https://www.techtarget.com/whatis/definition/gaming" class="btn">More Details</a>
+                        </div>
+                    </div>
+                    <div class="right-info">
+                        <h1>Game</h1>
+                        <h3>Child</h3>
+                    </div>
+                </div>
+    
+                <div class="slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/253/1016/20/5bd451d7537ad-wallpaper-preview.jpg" alt="">
+                    <div class="left-info">
+                        <div class="penetrte-blur">
+                            <h1>Co</h1>
+                        </div>
+                        <div class="content">
+                            <h3>04. The Sliver Monster</h3>
+                            <p>Based on the search results, "the silver monster game" does not seem to be a specific game or a commonly used phrase. However, if you are referring to a game that involves a silver monster, it is possible that you are referring to a tabletop or video game that features a silver monster as an enemy or a character. </p>
+                            <a href="https://www.techtarget.com/whatis/definition/gaming" class="btn">More Details</a>
+                        </div>
+                    </div>
+                    <div class="right-info">
+                        <h1>bra</h1>
+                        <h3>Monster</h3>
+                    </div>
+                </div>
+    
+                <div class="slide">
+                    <img src="https://wallpapercave.com/wp/wp2872486.jpg" alt="">
+                    <div class="left-info">
+                        <div class="penetrte-blur">
+                            <h1>Car</h1>
+                        </div>
+                        <div class="content">
+                            <h3>05. Cars</h3>
+                            <p>Based on the search results, it seems that you are referring to the Disney game "The World of Cars Online," which was an online computer game based on the movie "Cars." In this game, players could earn points by racing against other players, completing quests, and participating in minigames. </p>
+                            <a href="https://www.techtarget.com/whatis/definition/gaming" class="btn">More Details</a>
+                        </div>
+                    </div>
+                    <div class="right-info">
+                        <h1>game</h1>
+                        <h3>Race</h3>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="navigation">
+                <span class="prev-btn"><i class="fa-solid fa-chevron-left fa-3x"></i></span>
+                <span class="next-btn"><i class="fa-solid fa-chevron-right fa-3x"></i></span>
+            </div>
+        </section>
+        <script>
+            const nxtBtn = document.querySelector(".next-btn");
+const prvBtn = document.querySelector(".prev-btn");
+const slides = document.querySelectorAll(".slide");
+const numberOfSlides = slides.length;
+let slideNumber= 0;
+
+
+// slider next button
+nxtBtn.onclick = () =>{
+    slides.forEach((slide) => {
+        slide.classList.remove('active');
+    });
+
+    slideNumber++;
+
+    if(slideNumber > (numberOfSlides-1)){
+        slideNumber = 0;
+    }
+
+    slides[slideNumber].classList.add('active');
+}
+
+
+// slider Prev button
+prvBtn.onclick = () =>{
+    slides.forEach((slide) => {
+        slide.classList.remove('active');
+    });
+
+    slideNumber--;
+
+    if(slideNumber < 0 ){
+        slideNumber = numberOfSlides - 1;
+    }
+
+    slides[slideNumber].classList.add('active');
+}
+        </script>
+    </body> 
+</body>
+</html>
